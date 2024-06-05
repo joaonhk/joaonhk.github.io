@@ -1,0 +1,799 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'raleway', sans-serif;
+}
+
+body{
+    font-size: 20px;
+    background-color: #2b2f4b;
+    overflow-x: hidden;
+}
+
+img{
+    width: 100%;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* estilização do navbar */
+nav{
+    max-width: 100%;
+    height: 10vh;
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: #222238;
+    top: 0; /* faz o navbar descer com a página */
+    position: sticky; /* faz o navbar descer com a página */
+}
+
+/* estilização para lodo do navbar e do footer */
+nav .nav-logo,
+footer .logo{
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-logo a,
+footer .logo a{
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav .nav-logo img,
+footer .logo img{
+    width: 40px;
+    height: 40px;
+}
+
+nav ul,
+footer .top ul{
+    display: flex;
+    gap: 40px;
+}
+/* fim */
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.link a{
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #fff;
+}
+
+/* animação dos links */
+.link a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #1d4ed8;
+    transition: all 0.3s ease;
+}
+
+.link a:hover::after{   
+    width: 70%;
+}
+
+/* customização do botão */
+button a{
+    text-decoration: none;
+    color: #ebebf3;
+}
+
+nav .botton{
+    padding: 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #222238;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ebebf3;
+    transition: all 0.3s ease;
+    width: 140px;
+    height: 50px;
+}
+
+nav .botton:hover{
+    background-color: #1d4ed8;
+}
+
+/* menu hamburguer */
+nav button#menuButton{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding: 7px;
+}
+/* fim customização botão */
+
+nav .container{
+    margin: auto;
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #1d4ed8;
+}
+
+/* estilização do header */
+header{
+    position: relative;
+    padding-top: 2rem;
+    display: grid; /* alinha em grade*/
+    grid-template-columns: repeat(2,1fr); /* costomiza a grade */
+    align-items: center;
+    gap: 13rem;
+    background-color: #2b2f4b;
+    width: 100%;
+    height: 80vh;
+}
+
+/* estilização do h1 */
+header .content h1{
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4rem;
+}
+
+header .content h1 span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+/* estilização do p */
+header .content p{
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+/* estilização da imagem */
+header .image{
+    position: relative;
+}
+
+/* estilização da imagem */
+header .image img{
+    max-width: 600px;
+    margin: auto;
+}
+
+header #particles{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+header .scroll{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    color:#fff;
+    transform: translate(0, -50%);
+    transition: all 0.5s;
+}
+
+header .scroll:hover{
+    opacity: 0.7;
+}
+
+header .scroll::before{
+    position: absolute;
+    top: -14px;
+    left: -12px;
+    z-index: -1;
+    content: ""; /* animação */
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    animation: pulse 3s infinite;
+}
+
+/* animação do botão scroll */
+@Keyframes pulse {
+    0%, 100%{
+        opacity: 0;
+    }
+    15%, 45%{
+        opacity: 1;
+    }
+    60%{
+        box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1);
+        opacity: 0;
+    }
+}
+
+/* customização de habilidades */
+.skills{
+    padding: 110px 85px 0;
+}
+
+.skills h3,
+.about h3,
+.portfolio .header h3,
+.feedback h3{
+    font-size: 40px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+h5{
+    color: #fff;
+}
+
+.skills .skill-items{
+    display: flex;
+    margin-top: 70px;
+    display: grid; /* alinha em grade*/
+    grid-template-columns: repeat(3,1fr);
+    gap: 70px;
+}
+
+.skills .skill-items .item{
+    background-color: #ebebf3;
+    color: #1f243d;
+    border-radius: 15px;
+    padding: 30px;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skills .skill-items .item:hover{
+    border-bottom: 4px solid #1d4ed8;
+}
+
+.skills .skill-items .item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f243d;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+}
+
+.skills .skill-items .item .icon i{
+    font-size: 26px;
+    color: #fff;
+}
+
+.skills .skill-items .item h4,
+.portfolio .portfo-items .item .info h4{
+    font-size: 18px;
+}
+
+.skills .skill-items .item p{
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 22px;
+    color: #1c1353;
+}
+/* fim estilização habilidades */
+
+/* incio estilização do Sobre */
+.about{
+    padding: 110px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about .left img{
+    width: 440px;
+    border-radius: 15px 15px 5px 5px;
+}
+
+.about .right p{
+    font-size: 20px;
+    margin-top: 30px;
+    color: #fff;
+}
+
+.botton{
+    text-decoration: none;
+    color: #ebebf3;
+}
+
+.portfolio{
+    background-color: #222238;
+    padding: 110px 85px;
+}
+
+.portfolio .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.portfolio .header button{
+    background-color: #1d4ed8;
+    padding: 10px 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.portfolio .header button a {
+    font-size: 26px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.portfolio .portfo-items{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    display: grid; /* alinha em grade*/
+    grid-template-columns: repeat(3,1fr);
+    gap: 70px;
+}
+
+.portfolio .portfo-items .item{
+    background-color: #ebebf3;
+    border-radius: 15px;
+    border-bottom: 4px solid transparent;
+    cursor: pointer;
+    box-shadow: 0 5px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.3 ease;
+}
+
+.portfolio .portfo-items .item:hover{
+    border-color: #1d4ed8;
+}
+
+.portfolio .portfo-items .item img{
+    width: 100%;
+    height: 240px;
+    object-fit: cover; /* centraliza a imagem no meio */
+    object-position: top;
+    border-radius: 10px 10px 20px;
+}
+
+.portfolio .portfo-items .item .info{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 32px 42px;
+}
+
+.portfolio .portfo-items .item .info p{
+    font-size: 15px;
+}
+
+.portfolio .portfo-items .item .info a{
+    text-decoration: underline; /* sublinhar */
+    text-underline-offset: 10px; /* espaçamento da linha com o texto */
+    text-decoration-color: #1c1353;
+}
+
+.portfolio .portfo-items .item .info a i{
+    margin-left: 2px;
+    font-size: 16px;
+}
+
+/* inicio da estilização de cursos */
+section .header{
+    margin-top: 5vh;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+.features{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 110px 85px;
+}
+
+.features .card{
+    background-color: #27272a;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.features .card:hover{
+    background-color: #323232;
+    border-color: #fff;
+}
+
+.features .card span{
+    display: inline-block;
+    background-color: #1e40af;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.features .card h4{
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.features .card p{
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.features .card a{
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.features .card a:hover{
+    color: #1e40af;
+}
+/* fim da estilização cursos */
+
+/* inicio do footer */
+footer{
+    background-color: #222238;
+    padding: 85px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12vh;
+}
+
+footer .logo a{
+    color: #ebebf3;
+}
+
+footer .top,
+footer .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .top .social-links{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+}
+
+footer .social-links a{
+    color: #ebebf3;
+}
+
+footer .separator{
+    width: 100%;
+    height: 1px;
+    background-color: #ebebf3;
+    margin: 30px 0 20px;
+}
+
+footer .bottom p{
+    font-size: 14px;
+    color: #ebebf3;
+    margin-top: 20px;
+}
+
+footer .bottom .links  a{
+    font-size: 12px;
+    margin-left: 14px;
+    color: #ebebf3;
+    margin-top: 30px;
+}
+/* fim do footer */
+
+/* responsividade */
+@media screen and (max-width: 1200px) {
+    .content h1{
+        font-size: 15px;
+    }
+
+    .image img{
+        width: 380px;
+    }
+
+    .skills .skill-items{
+        gap: 25px;
+    }
+
+    .skills .skill-items .item{
+        width: 90%;
+    }
+
+    .about .left img{
+        width: 370px;
+    }
+
+    .skills h3,
+    .about .right h3,
+    .portfolio .header h3{
+        font-size: 32px;
+    }
+
+    .about .right p{
+        font-size: 15px;
+    }
+
+    .portfolio .portfo-items{
+        gap: 25px;
+    }
+
+    .portfolio .portfo-items .item{
+        width: 90%;
+    }
+
+    .kontainer .features .card h4{
+        font-size: 16px;
+    }
+
+    .kontainer .features .card p{
+        font-size: 15px;
+    }
+
+    footer .top ul{
+        gap: 15px;    
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    nav button{
+        display: none;
+    }
+
+    nav ul{
+        gap: 20px
+    }
+
+    nav ul li a{
+        font-size: 15px;
+    }
+
+    header{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    header .content{
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+    header .image{
+        margin-top: 0px;
+        margin-bottom: 50px;
+    }
+
+    .skills .skill-items{
+        gap: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .about{
+        flex-direction: column;
+        justify-content: center;
+    } 
+    
+    .portfolio .portfo-items{
+        gap: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .portfolio .portfo-items .item{
+        width: 85%;
+    }
+
+    .kontainer .features{
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .kontainer .features .card{
+        width: 70%;
+    }
+
+    footer .top ul{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    nav{
+        justify-content: space-between;
+        padding: 0 42px;
+    }
+
+    nav ul.nav-links{
+        display: none;
+    }
+
+    nav.open .nav-logo{
+        display: none;
+    }
+
+    nav.open ul.nav-links{
+        display: flex;
+    }
+
+    nav button#menuButton{
+        display: flex;
+    }
+
+    header{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    header .content h1{
+        margin-left: 0px;
+    }
+
+    header .image {
+        margin: 0%;
+        max-width: 200px;
+        margin-bottom: 500px;
+    }
+
+    header .scroll{
+        position:absolute;
+        margin-top: 0%;
+    }
+
+    .container{
+        padding: 42px;
+    }
+
+    .skills{
+        padding: 85px 42px 0;
+    }
+
+    .skills .skill-items{
+        gap: 8px;
+    }
+
+    .about{
+        padding: 85px 42px;
+    }
+
+    .portfolio{
+        padding: 60px 42px;
+    }
+
+    .portfolio .portfo-items{
+        gap: 18px;
+    }
+
+    .kontainer{
+        padding: 85px 42px;
+    }
+
+    .features{
+        padding: 0px;
+    }
+
+    .features .card{
+        width: 5000px;
+    }
+
+    footer{
+        padding: 85px 42px;
+    }
+
+    footer .bottom{
+        flex-direction: column-reverse;
+        gap: 14px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    
+    nav ul li a{
+        font-size: 11px;
+    }
+    
+    nav .nav-logo a{
+        font-size: 18px;
+    }
+
+    header H1{
+        margin-left: 0vh;
+    }
+
+    .image{
+        display: none;
+    }
+
+    .container .left h3{
+        font-size: 32px;
+    }
+
+    .container .left p{
+        font-size: 16px;
+    }
+
+    .container .left button{
+        width: 100%;
+    }
+
+    .skills .skill-items .item{
+        width: 100%;
+    }
+
+    .portfolio .header button{
+        font-size: 12px;
+        padding: 8px 14px;
+        width: 120px;
+        height: 60px;
+        display: none;
+    }
+
+    .portfolio .header a{
+        font-size: 5px;
+    }
+
+    .portfolio .portfo-items .item{
+        width: 80%;
+    }
+
+    .features{
+        padding: 0px;
+    }
+
+    .features .card{
+        width: 5000px;
+    }
+
+    .feedback .customers .item{
+        width: 100%;
+    }
+}
